@@ -26,5 +26,5 @@ production:
   pool: 5
   username: root
   password: 123.com
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
   timeout: 5000
