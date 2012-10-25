@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  database: blog
   pool: 5
+  username: root
+  password: 123.com
+  socket: /tmp/mysql.sock
   timeout: 5000
