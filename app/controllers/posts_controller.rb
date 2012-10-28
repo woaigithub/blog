@@ -45,6 +45,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @categories = Category.all
 
     respond_to do |format|
       if @post.save
@@ -61,6 +62,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    @categories = Category.all
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
