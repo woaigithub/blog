@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>博客</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
-
-
-  <div class="row">
-    <div class="span4">..</div>
-    <div class="span8">...</div>
+  <div class="navbar navbar-inverse nav-fixed-top">
+  
   </div>
+  <header>
+    <div class="container">
+    <h1>Welcome to Rails Blog!!!</h1>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <ul claass="nav nav-list bs-docs-sidenav affix">
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">Categories</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/comments">Comments</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </div>
+      <div class="span10">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <hr>
+    <div class="container">
+    <div class="row">
+      <div class="span3">
+        CopyRight@woaigithub
+      </div>
+
+      <div class="span3">
+        <a href="mailto:jorden008@gmail.com">mailto: jorden008@gmail.com</a>
+      </div>
+    </div>
+    </div>
+  </footer>
+
 </body>
 </html>

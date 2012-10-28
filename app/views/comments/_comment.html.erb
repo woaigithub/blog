@@ -1,0 +1,19 @@
+
+<p>
+  <b>Title:</b>
+
+  <%= comment.title %>
+</p>
+
+<p>
+
+  <b>Content:</b>
+  <%= comment.content %>
+</p>
+
+<p>
+<%= link_to 'Delete comment', [comment.post, comment],
+    :confirm => 'are you sure?',
+    :method => :delete %>
+
+<p>
