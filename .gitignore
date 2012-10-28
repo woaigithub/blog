@@ -20,3 +20,5 @@ tmp/
 public/assets/
 
 *.swp
+
+config/database.yml
