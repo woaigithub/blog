@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :title, :url, :tags_attributes, :published
+  attr_accessible :content, :title, :url, :tags_attributes, :published, :category_id
 
   has_many :comments, :dependent => :destroy
   has_many :tags, :dependent => :destroy

@@ -14,6 +14,12 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :category_id %><br/>
+
+    <%= f.select(:category_id, options_from_collection_for_select(@categories, :id, :title)) %>
+  </div>
+
+  <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
@@ -26,7 +32,8 @@
   <div class="field">
     <%= f.label :content %><br />
 
-    <%= f.text_area :content, :rows => 8 %>
+    <%= f.text_area :content, :cols => 24, :rows => 6 %>
+
   </div>
 
   <h2>Tags</h2>

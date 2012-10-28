@@ -1,0 +1,1 @@
+<h1>Client index</h1>
