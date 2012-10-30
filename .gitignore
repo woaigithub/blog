@@ -18,6 +18,7 @@ log/*.log*
 tmp/
 
 public/assets/
+public/uploads/
 
 *.swp
 
