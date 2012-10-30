@@ -4,7 +4,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+   # @posts = Post.all
+    
+    page = params[:page]
+    if(page == nil)
+      page = 1
+    end    
+    @posts = Post.paginate(:page => page, :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,6 +55,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        uploaded_io = params[:post][:picture]
+        File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'w') do |f|
+          f.write(uploaded_io.read)
+        end
         format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else

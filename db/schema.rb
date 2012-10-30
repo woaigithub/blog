@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027163947) do
+ActiveRecord::Schema.define(:version => 20121029064054) do
 
   create_table "addresses", :force => true do |t|
     t.string   "detail"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20121027163947) do
     t.string   "url"
     t.integer  "category_id", :default => 0
     t.boolean  "published",   :default => false
+    t.string   "picture"
   end
 
   create_table "roles", :force => true do |t|
