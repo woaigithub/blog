@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   http_basic_authenticate_with :name => "root", :password => "root", :except => [:index, :show]
 
+
+
   # GET /posts
   # GET /posts.json
   def index
@@ -52,12 +54,21 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @categories = Category.all
+    
+    
 
     respond_to do |format|
       if @post.save
         uploaded_io = params[:post][:picture]
-        File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'w') do |f|
-          f.write(uploaded_io.read)
+        if uploaded_io != nil and uploaded_io.content_type.match('image')
+       
+          File.open(Rails.root.join('public','uploads',uploaded_io.original_filename),'wb') do |f|
+
+            f.write(uploaded_io.read)
+          end
+       
+        else
+          flash[:notice] = 'do not support non image format!'
         end
         format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
