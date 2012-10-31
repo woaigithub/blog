@@ -42,3 +42,5 @@ gem 'fastthread'
 gem 'mysql2'
 
 gem 'will_paginate', '~> 3.0'
+
+gem 'prawn'

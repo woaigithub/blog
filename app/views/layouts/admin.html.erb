@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>博客<%= yield :title %></title>
+  <title>博客后台<%= yield :title %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -13,7 +13,7 @@
   </div>
   <header>
     <div class="container">
-    <h1>Welcome to Rails Blog!!!</h1>
+    <h1>Welcome to Rails Blog Admin!!!</h1>
     </div>
   </header>
 
@@ -22,12 +22,13 @@
       <div class="span2">
         <ul claass="nav nav-list bs-docs-sidenav affix">
           
-          <li><a href="/">Home</a></li>
-          <li><a href="/search">Search</a></li>
-          <li><a href="/categories">Categories</a></li>
-          <li><a href="/posts">Posts</a></li>
-          <li><a href="/comments">Comments</a></li>
-          <li><a href="/tags">Tags</a></li>
+          <li><%= link_to 'Back Blog Home', root_url %></a></li>
+          <li><%= link_to 'Back Admin Home', admin_url %></li>
+          <li><%= link_to 'Posts', admin_posts_url %></li>
+          <li><%= link_to 'Categories', admin_categories_url %></a></li>
+          
+          <li><%= link_to 'Comments', admin_comments_url %></li>
+          <li><%= link_to 'Tags', admin_tags_url %></li>
         </ul>
       </div>
       <div class="span10">
@@ -46,9 +47,6 @@
 
       <div class="span3">
         <a href="mailto:jorden008@gmail.com">mailto: jorden008@gmail.com</a>
-      </div>
-      <div class="span3">
-        <a href="<%= admin_url %>">Admin</a>
       </div>
     </div>
     </div>

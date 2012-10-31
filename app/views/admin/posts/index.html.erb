@@ -1,0 +1,26 @@
+<h2>Post list</h2>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Created</th>
+    <th>Updated</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.created_at %></td>
+    <td><%= post.updated_at %></td>
+    <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
+    <td><%= link_to 'Delete',[:admin, post], :method => :delete, :confirm => 'are you sure?' %></td>
+    <td></td>
+  </tr>
+  <% end %>
+</table>
+
+<br/>
+<%= will_paginate @posts %>
+<br/>
+<%= link_to 'New Post', new_admin_post_path %>

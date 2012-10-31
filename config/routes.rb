@@ -1,6 +1,14 @@
 Blog::Application.routes.draw do
+ 
+  match 'clients/download_pdf' => 'clients#download_pdf'
+
+  match 'admin' => 'admin#index'
+  namespace :admin do
+    resources :posts, :comments, :tags, :categories
+  end
 
   resources :categories
+
 
   resources :comments
 
@@ -17,6 +25,8 @@ Blog::Application.routes.draw do
   end
 
   resources :search
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

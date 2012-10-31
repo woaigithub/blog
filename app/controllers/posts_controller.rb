@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with :name => "root", :password => "root", :except => [:index, :show]
+#  http_basic_authenticate_with :name => "root", :password => "root", :except => [:index, :show]
 
-
+  USERS ={"root" => "root"}
+  before_filter :authenticate, :except => [:index, :show]
+  
+ 
 
   # GET /posts
   # GET /posts.json
@@ -16,7 +19,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @posts }
+      format.json { render :json => @posts }
     end
   end
 
@@ -70,7 +73,7 @@ class PostsController < ApplicationController
         else
           flash[:notice] = 'do not support non image format!'
         end
-        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
+        format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -108,6 +111,12 @@ class PostsController < ApplicationController
     end
   end
  
-
+  private
+  
+  def authenticate
+    authenticate_or_request_with_http_digest do |username|
+      USERS[username]
+    end
+  end
     
 end
