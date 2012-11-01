@@ -1,14 +1,19 @@
 
 <p>
-  <b>Title:</b>
+  <b><a href="<%= comment.url %>"><%= comment.commenter %></a></b>
+  <span></span><%= comment.updated_at.localtime.to_s(:db) %>
+</p>
 
-  <%= comment.title %>
+<p>
+<b>Title:</b>
+
+<%= comment.title %>
 </p>
 
 <p>
 
-  <b>Content:</b>
-  <%= comment.content %>
+<b>Content:</b>
+<%= comment.content %>
 </p>
 
 <p>
@@ -16,4 +21,4 @@
     :confirm => 'are you sure?',
     :method => :delete %>
 
-<p>
+</p>

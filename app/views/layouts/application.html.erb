@@ -4,6 +4,8 @@
   <title>博客<%= yield :title %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -24,10 +26,7 @@
           
           <li><a href="/">Home</a></li>
           <li><a href="/search">Search</a></li>
-          <li><a href="/categories">Categories</a></li>
           <li><a href="/posts">Posts</a></li>
-          <li><a href="/comments">Comments</a></li>
-          <li><a href="/tags">Tags</a></li>
         </ul>
       </div>
       <div class="span10">

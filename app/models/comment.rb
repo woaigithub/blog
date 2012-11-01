@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :content, :title
+  attr_accessible :content, :title, :commenter, :email, :url
 
   belongs_to :post
 

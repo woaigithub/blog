@@ -16,8 +16,8 @@
   <% @categories.each do |category| %>
   <tr>
     <td><%= category.title %></td>
-    <td><%= category.created_at %></td>
-    <td><%= category.updated_at %></td>
+    <td><%= category.created_at.localtime.to_s(:db) %></td>
+    <td><%= category.updated_at.localtime.to_s(:db) %></td>
     <td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
     <td><%= link_to 'Delete', @category, :method => :delete, :confirm => 'are you sure?' %></td>
   </tr>

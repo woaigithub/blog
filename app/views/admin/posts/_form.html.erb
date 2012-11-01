@@ -1,0 +1,33 @@
+<%= form_for([:admin, @post]) do |f| %>
+  <div class="field">
+    <%= f.label :category_id %><br/>
+    <%= f.select(:category_id, options_from_collection_for_select(@categories, :id, :title)) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :url %><br/>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture %><br/>
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %><br/>
+    <%= f.text_area :content, :cols => 40, :rows => 4, :class => :mceEditor %>
+  </div>
+
+  <h2>Tags</h2>
+    <%= render :partial => 'admin/tags/form',
+               :locals => { :form => f } %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

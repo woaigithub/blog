@@ -1,0 +1,2 @@
+module Platform::PostHelper
+end
