@@ -58,5 +58,7 @@ module Blog
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.active_record.default_timezone = :local 
+    config.time_zone = 'Beijing' 
   end
 end
