@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121029064054) do
+ActiveRecord::Schema.define(:version => 20121101101734) do
 
   create_table "addresses", :force => true do |t|
     t.string   "detail"
@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(:version => 20121029064054) do
     t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "commenter"
+    t.string   "email"
+    t.string   "url"
   end
 
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
@@ -85,5 +88,21 @@ ActiveRecord::Schema.define(:version => 20121029064054) do
   end
 
   add_index "tags", ["post_id"], :name => "index_tags_on_post_id"
+
+  create_table "tiny_prints", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_file_size"
+    t.string   "image_content_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "tiny_videos", :force => true do |t|
+    t.string   "original_file_name"
+    t.string   "original_file_size"
+    t.string   "original_content_type"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
 end

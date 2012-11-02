@@ -3,6 +3,6 @@ class Comment < ActiveRecord::Base
 
   belongs_to :post
 
-  validates :content, :presence => true
+#  validates :content, :presence => true
 #                      :length => { :maximun => 249 }
 end

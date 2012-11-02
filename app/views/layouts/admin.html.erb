@@ -4,7 +4,10 @@
   <title>博客后台<%= yield :title %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
- 
+
+  <%= tiny_mce if using_tiny_mce? %>
+
+  <script type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
  
   <%= csrf_meta_tags %>
 </head>
