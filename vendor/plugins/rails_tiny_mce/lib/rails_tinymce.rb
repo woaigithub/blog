@@ -1,3 +1,0 @@
-module RailsTinymce
-  # Your code goes here...
-end
