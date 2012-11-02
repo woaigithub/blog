@@ -26,8 +26,6 @@ Blog::Application.routes.draw do
 
   resources :search
 
-  match "attachments/manage(.:format)" => "attachments#manage" 
-  match "attachments/create(.:format)" => "attachments#create"  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

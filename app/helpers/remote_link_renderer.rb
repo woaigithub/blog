@@ -1,4 +1,4 @@
-class RemoteLinkRenderer < WillPaginate::LinkRenderer
+class RemoteLinkRenderer < WillPaginate::ViewHelpers::LinkRenderer
   def page_link_or_span(page, span_class = 'current', text = nil)
     text ||= page.to_s
     if page and page != current_page
