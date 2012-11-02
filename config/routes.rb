@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
  
+  mount Ckeditor::Engine => '/ckeditor'
+
   match 'clients/download_pdf' => 'clients#download_pdf'
 
   match 'admin' => 'admin#index'
@@ -26,7 +28,7 @@ Blog::Application.routes.draw do
 
   resources :search
 
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

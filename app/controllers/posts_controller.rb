@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     if(page == nil)
       page = 1
     end    
-    @posts = Post.paginate(:page => page, :per_page => 10)
+    @posts = Post.paginate(:page => page, :per_page => 10, :order => "updated_at desc").includes(:category)
 
     respond_to do |format|
       format.html # index.html.erb

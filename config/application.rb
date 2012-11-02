@@ -60,5 +60,7 @@ module Blog
     config.assets.version = '1.0'
     config.active_record.default_timezone = :local 
     config.time_zone = 'Beijing' 
+
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end
