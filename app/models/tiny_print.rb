@@ -1,7 +1,5 @@
 class TinyPrint < ActiveRecord::Base
- 
-#  include Paperclip::Glue
- 
+  
   has_attached_file :image,
     :convert_options => { :quality =>  4 },
     :styles => { :small_thumb => [ "50x50", :jpg ],
