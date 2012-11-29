@@ -1,33 +1,6 @@
 Blog::Application.routes.draw do
- 
-  mount Ckeditor::Engine => '/ckeditor'
-
-  match 'clients/download_pdf' => 'clients#download_pdf'
-
-  match 'admin' => 'admin#index'
-  namespace :admin do
-    resources :posts, :comments, :tags, :categories
-  end
-
-  resources :categories
-
-
-  resources :comments
 
   root :to => 'posts#index'
-
-  resources :posts do
-    resources :comments
-  end
-
-  resources :tags
- 
-  resources :clients do
-
-  end
-
-  resources :search
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
