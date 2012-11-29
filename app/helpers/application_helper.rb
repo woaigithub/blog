@@ -10,4 +10,15 @@ module ApplicationHelper
     end
     base
   end
+
+  def admin_full_title(title)
+    base = "Blog Admin"
+    unless title.blank?
+      base = "#{title} | #{base}"
+    end
+
+    base
+  end
+  
+  
 end

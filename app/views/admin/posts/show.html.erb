@@ -1,0 +1,12 @@
+<h1><%= @post.title %></h1>
+
+<div>
+  <%= @post.category.title %>
+</div>
+<div>
+  <%= @post.content%>
+</div>
+
+<%= link_to "return", admin_posts_path %>
+
+<hr/>

@@ -1,0 +1,14 @@
+<% content_for :title do %>Posts<% end %>
+
+<h1>Posts</h1>
+
+  <% @posts.each do |post| %>
+  <div class="row">
+    <div class="span3"><%= link_to post.title, [:admin, post]%></div>
+    <div class="span1">
+      <%= link_to "edit", edit_admin_post_path(post.id) %>
+    </div>
+  </div>
+  <% end %>
+
+<%= link_to "new post", new_admin_post_path %>
