@@ -1,0 +1,17 @@
+<div>
+  <%= form_for [:admin, @post] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :slug %>
+    <%= f.text_field :slug %>
+
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.collect{|cate|[cate.title, cate.id]} %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content, :rows => 10, :cols => 20 %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
