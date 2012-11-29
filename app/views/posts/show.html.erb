@@ -1,33 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @post.title %></h1>
+<div>
+  <%= @post.content%>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @post.category.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= raw @post.content %>
-</p>
-
-<p>
-  <b>Tags:</b>
-  <%= @post.tags.map { |t| t.title }.join(", ") %>
-</p>
-
-<hr>
-<h2>comments:</h2>
-
-<%= render @post.comments %>
-<hr>
-
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to "return", posts_path %>

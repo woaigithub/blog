@@ -2,8 +2,10 @@
 
 one:
   title: MyString
-  content: MyString
+  slug: MyString
+  content: MyText
 
 two:
   title: MyString
-  content: MyString
+  slug: MyString
+  content: MyText
