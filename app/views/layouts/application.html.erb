@@ -8,9 +8,45 @@
 </head>
 <body>
 
-  <div class="container">
-  <%= yield %>
+
+  
+  <nav>
+    <%= render 'layouts/navbar_fixed_top' %>
+  </nav>
+
+  <header>
+  
+  <div class="container blog-header" style="background:grey;height:100px;">
+    <div class="row">
+       <div class="span3">
+         header
+       </div>
+    </div>
   </div>
+  </header>
+
+  <div class="container blog-body" style="height:800px;">
+    <div class="row">
+      <div class="span8">
+        <%= yield %>
+      </div>
+      <div class="span3">
+        <ul>
+          <li>ruby</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div class="container" style="background:grey;">
+    <div class="row">
+ 
+   
+      <div class="span3">copytright@<a href="#">woaigithub</a></div>
+    </div>
+  </div>
+  </footer>
 
 </body>
 </html>

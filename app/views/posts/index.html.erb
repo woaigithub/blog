@@ -4,9 +4,13 @@
 
 <div>
   <% @posts.each do |post| %>
-    <div><%= link_to post.title, post%></div>
-    <div>
-      <%= post.content %>
+    <div class="row">
+    
+      <%= link_to post.title, post%>
+
+    </div>
+    <div claass="row">
+      <%= post.summary %>
     </div>
   <% end %>
-<div>
+</div>
