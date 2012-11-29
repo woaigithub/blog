@@ -8,9 +8,35 @@
 </head>
 <body>
 
-  <div class="container">
-  <%= yield %>
+
+  
+  <nav>
+    <%= render 'layouts/navbar_fixed_top' %>
+  </nav>
+
+  <header>
+    <%= render 'layouts/header' %>
+  </header>
+
+  <div class="container blog-body" style="height:800px;">
+    <div class="row">
+      <div class="span8">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span8">
+        <%= yield %>
+      </div>
+      <div class="span3">
+        <%= render 'layouts/admin_sidebar' %>
+      </div>
+    </div>
   </div>
+
+  <footer>
+  <%= render 'layouts/footer' %>
+  </footer>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 module ApplicationHelper
-
+  
 
   def full_title(title)
     base = "Blog"
@@ -20,5 +20,5 @@ module ApplicationHelper
     base
   end
   
-  
+
 end

@@ -1,0 +1,11 @@
+<h1>Categories</h1>
+
+<% if @categories.any? %>
+  <% @categories.each do |category| %>
+    <div class="row">
+      <div class="span3">
+       <%= link_to category.title, edit_admin_category_path(category.id) %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

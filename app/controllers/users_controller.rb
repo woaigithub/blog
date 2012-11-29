@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = "sign up successfully!"
+      signin(@user)
       redirect_to root_path
     else
       flash.now[:notice] = "sign up failed!"

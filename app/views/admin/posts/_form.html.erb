@@ -1,17 +1,53 @@
 <div>
-  <%= form_for [:admin, @post] do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <%= form_for [:admin, @post], :class => "form-horizontal" do |f| %>
+    <div class="control-group">
+      <div class="groups">
+        <%= render 'shared/object_messages', :target => @post %>
+      </div>
+    </div>
 
-    <%= f.label :slug %>
-    <%= f.text_field :slug %>
+    <div class="control-group">
+      <div class="groups">
+        <%= f.submit %>  
+      </div>
+    </div>
 
-    <%= f.label :category_id %>
-    <%= f.select :category_id, Category.all.collect{|cate|[cate.title, cate.id]} %> 
-  
-    <%= f.label :content %>
-    <%= f.text_area :content, :rows => 10, :cols => 20 %>
+    <div class="control-group"> 
+      
+      <%= f.label :title, :class => "control-label" %>
+      <div class="groups">
+        <%= f.text_field :title %>
+      </div>
+    </div>
 
-    <%= f.submit %>
+    <div class="control-group">
+      <%= f.label :slug, :class => "control-label" %>
+      <div class="groups">
+        <%= f.text_field :slug %>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+
+      <%= f.label :category_id, :class => "control-label" %>
+      <div class="groups">
+        <%= f.select :category_id, Category.all.collect{|cate|[cate.title, cate.id]} %> 
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :content, :class => "control-lable" %>
+      <div class="groups">
+
+        <%= f.text_area :content, :rows => 10, :cols => 20 %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="groups">
+        <%= f.submit %>  
+      </div>
+    </div>
   <% end %>
 </div>

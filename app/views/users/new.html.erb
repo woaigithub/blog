@@ -1,20 +1,27 @@
-<h1>Sign in</h1>
+<h1>Sign up</h1>
 
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <h3><%= pluralize(@user.errors.count, "error")%> encounter</h3>
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  <% end %>
+<%= form_for @user, :class => "form-horizontal" do |f| %>
+
+  <%= render 'shared/object_messages', :target => @user %>
   
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  <div class="control-group">
+    <%= f.label :email, :class => "control-label" %>
+    <div class="groups">
+      <%= f.text_field :email %>
+    </div>
+  </div>
 
-  <%= f.label :nickname %>
-  <%= f.text_field :nickname %>
+  <div class="control-group">
+    <%= f.label :nickname, :class => "control-label" %>
+    <div class="groups">
+      <%= f.text_field :nickname %>
+    </div>
+  </div>
 
-  <%= f.submit "Sign in" %>
+  <div class="control-group">
+    <div class="groups">
+    <%= f.submit "Sign in" %>
+    </div>
+  </div>
+
 <% end %>

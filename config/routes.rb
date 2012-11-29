@@ -13,9 +13,19 @@ Blog::Application.routes.draw do
   resources :categories
   resources :sessions
   resources :users
+  
 
   namespace :admin do
     resources :posts
+  end
+  namespace :admin do
+    resources :categories
+  end
+  namespace :admin do
+    resources :comments
+  end
+  namespace :admin do
+    resources :tags
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,11 +1,20 @@
 <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#">Blog</a>
-          <ul class="nav pull-right">
-            <li><%= link_to "sign in", signin_path %></li>
-            <li><%= link_to "sign up", signup_path %></li>
-          </ul>
+          <%= link_to "Blog", root_path, :class => "brand"%>
+
+          <% if signed_in? %>
+            <ul class="nav pull-right">
+              <li> <%= link_to "welcome back, "+current_user.nickname, current_user %></li>
+              <li><%= link_to "sign out", signout_path %></li>
+            </ul>
+          <% else %>
+            <ul class="nav pull-right">
+              <li><%= link_to "sign in", signin_path %></li>
+              <li><%= link_to "sign up", signup_path %></li>
+            </ul>
+
+          <% end %>
         </div>
       </div>
     </div>

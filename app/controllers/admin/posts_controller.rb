@@ -1,5 +1,4 @@
-class Admin::PostsController < ApplicationController
-  layout "layouts/admin"
+class Admin::PostsController < Admin::ApplicationController
 
   def index
     @posts = Post.order("created_at desc").all
@@ -18,9 +17,10 @@ class Admin::PostsController < ApplicationController
     params[:post].delete(:category_id)
     @post = @category.posts.build(params[:post])
     if @post.save
-      
+      flash[:notice] = "post was created successfully"
       redirect_to admin_posts_path
     else
+      flash.now[:notice] = "create post failed"
       render :new
     end
   end
@@ -36,8 +36,10 @@ class Admin::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.category = @category
     if @post.update_attributes(params[:post])
+      flash[:notice] = "post was updated successfully"
       redirect_to admin_posts_path
     else
+      flash[:notice] = "update post failed"
       render :edit
     end
   end

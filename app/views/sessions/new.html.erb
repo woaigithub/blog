@@ -1,10 +1,20 @@
 <h1>Sign in</h1>
 
 <div class="row">
-  <%= form_for User.new, :url => sessions_path do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <%= form_for User.new, :url => sessions_path, :class => "form-horizontal" do |f| %>
 
-    <%= f.submit "sign in" %>
+    <div class="control-group">
+      <%= f.label :email, :class => "control-label" %>
+      <div class="groups">
+        <%= f.text_field :email %>
+      </div>
+    </div>
+    <div class="control-group">
+
+      <div class="groups">
+        <%= f.submit "sign in" %>
+      </div>
+    </div>
+
   <% end %>
 </div>

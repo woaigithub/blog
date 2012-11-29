@@ -6,6 +6,6 @@ class CreateCategories < ActiveRecord::Migration
       t.timestamps
     end
 
-    
+    Category.create(:title=>"None")   
   end
 end
