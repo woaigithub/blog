@@ -2,8 +2,9 @@
 
 <h1>Posts</h1>
 
-<div>
-  <% @posts.each do |post| %>
+
+<% @posts.each do |post| %>
+  <div>
     <div class="row">
     
       <%= link_to post.title, post%>
@@ -12,5 +13,6 @@
     <div claass="row">
       <%= post.summary %>
     </div>
-  <% end %>
-</div>
+  </div>
+
+<% end %>

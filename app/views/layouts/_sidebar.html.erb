@@ -1,5 +1,16 @@
+
+
 <div class="sidebar">
+  
+
   <ul class="nav nav-list">
-    <li></li>
+  	<li>Category</li>
+  	<% if !@categories.blank? and @categories.any? %>
+      <% @categories.each do |category| %>
+        <li><%= link_to category.title, category %></li>
+      <% end %>
+  	<% end %>
+    
+  
   </ul>
 </div>
