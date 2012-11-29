@@ -1,0 +1,20 @@
+<h1>Sign in</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <h3><%= pluralize(@user.errors.count, "error")%> encounter</h3>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :nickname %>
+  <%= f.text_field :nickname %>
+
+  <%= f.submit "Sign in" %>
+<% end %>

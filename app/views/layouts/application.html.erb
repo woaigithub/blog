@@ -28,6 +28,11 @@
   <div class="container blog-body" style="height:800px;">
     <div class="row">
       <div class="span8">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span8">
         <%= yield %>
       </div>
       <div class="span3">
