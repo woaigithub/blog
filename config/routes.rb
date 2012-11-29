@@ -3,11 +3,16 @@ Blog::Application.routes.draw do
 
   root :to => 'posts#index'
 
+  match "signin" => "sessions#new"
+  match "signout" => "sessions#destroy", :method => :delete
+  match "signup" => "users#new"
 
   resources :posts do
     resources :comments
   end
   resources :categories
+  resources :sessions
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
