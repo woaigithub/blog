@@ -1,0 +1,10 @@
+<div>
+  <a href="<%= comment.commenter_url %>"><%= comment.commenter%></a> 
+  comment at <%= comment.created_at.localtime %>
+  <br/>
+  about <%= time_ago_in_words(comment.created_at.localtime) %> ago
+  <br/>
+  <div>
+    <%= comment.content %>
+  </div
+</div>

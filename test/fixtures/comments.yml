@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
+  commenter: MyString
+  commenter_email: MyString
+  commenter_url: MyString
   content: MyText
 
 two:
-  title: MyString
+  commenter: MyString
+  commenter_email: MyString
+  commenter_url: MyString
   content: MyText

@@ -8,3 +8,10 @@
 </div>
 
 <%= link_to "return", posts_path %>
+
+<hr/>
+<h2>Comments</h2>
+
+<%= render @post.comments %>
+
+<%= render 'comments/form' %>
