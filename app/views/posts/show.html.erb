@@ -1,4 +1,8 @@
 <h1><%= @post.title %></h1>
+
+<div>
+  <%= link_to @post.category.title, @post.category %>
+</div>
 <div>
   <%= @post.content%>
 </div>
