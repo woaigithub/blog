@@ -1,7 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
 one:
-  email: MyString
+  nickname: nickname1
+  email: invalidemail
 
 two:
-  email: MyString
+  nickname: nickname2
+  email: invalideamil@
+three:
+  nickname: nickname3
+  email: validemail@123.com
+
+four:
+  nickname: nickname4
+  email: validemail@baidu.com

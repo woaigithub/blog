@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       signin(user)
       redirect_to root_path
     else
-      flash.now[:notice] = "email and password can't match"
+      flash.now[:notice] = "email and password do not match"
       render :new
     end
   end

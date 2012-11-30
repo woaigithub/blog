@@ -67,4 +67,3 @@ Blog::Application.configure do
 
   config.assets.precompile += ['ckeditor/*']
 end
-Paperclip.options[:command_path] = '/usr/bin/'
