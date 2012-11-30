@@ -18,6 +18,7 @@ class Admin::PostsController < Admin::ApplicationController
     params[:post].delete(:category_id)
     @post = @category.posts.build(params[:post])
     @post.user = current_user
+    @post.tag_ids = params[:tag_ids]
     if @post.save
       flash[:notice] = "post was created successfully"
       redirect_to admin_posts_path
@@ -28,7 +29,7 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.includes(:tags).find(params[:id])
   end 
 
 
@@ -39,6 +40,7 @@ class Admin::PostsController < Admin::ApplicationController
     @post = Post.find(params[:id])
     @post.category = @category
     @post.user = current_user
+    @post.tag_ids = params[:tag_ids]
     if @post.update_attributes(params[:post])
       flash[:notice] = "post was updated successfully"
       redirect_to admin_posts_path

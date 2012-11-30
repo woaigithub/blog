@@ -6,6 +6,9 @@
 <div>
   <%= @post.user.nickname %> created at <%= @post.created_at.localtime.to_s(:db) %>
 </div>
+<div claass="row">
+  Tags: <%= @post.tags.map {|tag| tag.title}.join(", ") %>
+</div>
 <div>
   <%= raw @post.content%>
 </div>

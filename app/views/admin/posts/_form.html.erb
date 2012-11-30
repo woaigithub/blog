@@ -35,6 +35,16 @@
         <%= f.select :category_id, Category.all.collect{|cate|[cate.title, cate.id]} %> 
       </div>
     </div>
+   
+    <div class="control-group">
+
+      <%= f.label :tags, :class => "control-label" %>
+      <div class="group">
+        <% Tag.all.each do |tag| %>
+          <%= check_box_tag "tag_ids[]", tag.id, @post.tag_ids.include?(tag.id) %><%= label_tag tag.title %>
+        <% end %>
+      </div>
+    </div>
 
     <div class="control-group">
       <%= f.label :content, :class => "control-lable" %>

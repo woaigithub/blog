@@ -17,6 +17,10 @@
 	      Posted at <%= time_ago_in_words(post.created_at.localtime) %> ago
           </div>
 	    </div>
+
+      <div claass="row">
+        Tags: <%= post.tags.map {|tag| tag.title}.join(", ") %>
+      </div>
 	    <div claass="row">
 	      <%= strip_tags(post.summary) %>
 	    </div>
