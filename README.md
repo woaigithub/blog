@@ -2,30 +2,52 @@
 
 ## framework: ruby on rails
 
-### user 
+### users
+* id
 * nickname
 * email
 * password_digest
+* salt
+* created_at
+* updated_at
 
-### tag
+### tags
+* id
 * title
+* created_at
+* updated_at
 
-### category
+### categorys
+* id
 * title
+* created_at
+* updated_at
 
-### comment
+### comments
+* id
 * commenter
 * commenter_email
 * commenter_url
 * content
+* post_id
+* created_at
+* updated_at
 
-### post
+### posts
+* id
 * title
 * slug
-* tags
-* category
+* category_id
 * summary
 * content
-* comments
+* created_at
+* updated_at
+* user_id
+
+### posts_tags
+* post_id
+* tag_id
+
+
 
 
