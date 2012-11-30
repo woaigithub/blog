@@ -1,11 +1,31 @@
-blog
-second
-this is develop
+# blog
 
-edit on web
-====
-master
-===
-omaster branch
+## framework: ruby on rails
 
-fixbug001
+### user 
+nickname
+email
+password_digest
+
+### tag
+title
+
+### category
+title
+
+### comment
+commenter
+commenter_email
+commenter_url
+content
+
+### post
+title
+slug
+tags
+category
+summary
+content
+comments
+
+
