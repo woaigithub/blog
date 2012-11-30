@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     @categories = Category.all
+    
   end
 
 

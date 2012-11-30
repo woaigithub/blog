@@ -1,16 +1,20 @@
 <h1><%= @post.title %></h1>
 
 <div>
-  <%= link_to @post.category.title, @post.category %>
+  Category: <%= link_to @post.category.title, @post.category %>
 </div>
 <div>
-  <%= @post.content%>
+  <%= @post.user.nickname %> created at <%= @post.created_at.localtime.to_s(:db) %>
+</div>
+<div>
+  <%= raw @post.content%>
 </div>
 
 
 <hr/>
-<h2>Comments</h2>
 
-<%= render @post.comments %>
+<h3>Comments</h3>
+
+<%= render 'comments/comment' %>
 
 <%= render 'comments/form' %>

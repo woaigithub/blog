@@ -1,10 +1,17 @@
-<div>
-  <a href="<%= comment.commenter_url %>"><%= comment.commenter%></a> 
-  comment at <%= comment.created_at.localtime %>
-  <br/>
-  about <%= time_ago_in_words(comment.created_at.localtime) %> ago
-  <br/>
-  <div>
-    <%= comment.content %>
-  </div
-</div>
+<% if @post.comments.any? %>
+
+  <% @post.comments.each do |comment| %>
+    <div>
+	  <a href="<%= comment.commenter_url %>"><%= comment.commenter%></a> 
+	  comment at <%= comment.created_at.localtime.to_s(:db) %>
+	  <br/>
+	  about <%= time_ago_in_words(comment.created_at.localtime) %> ago
+	  <br/>
+	  <div>
+	    <%= comment.content %>
+	  </div>
+	  <hr/>
+	</div>
+  <% end %>
+
+<% end %>

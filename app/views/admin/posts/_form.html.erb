@@ -2,7 +2,7 @@
   <%= form_for [:admin, @post], :class => "form-horizontal" do |f| %>
     <div class="control-group">
       <div class="groups">
-        <%= render 'shared/object_messages', :target => @post %>
+        <%= render 'shared/object_messages', :target => f.object %>
       </div>
     </div>
 

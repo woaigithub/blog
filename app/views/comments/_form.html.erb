@@ -1,19 +1,40 @@
 <div>
   <h3>New comment:</h3>
-  <%= form_for [@post, @post.comments.build] do |f| %>
-    <%= f.label :commenter %>
-    <%= f.text_field :commenter %>
+  <%= form_for [@post, @post.comments.build], :class=>"form-horizontal" do |f| %>
 
-    <%= f.label :commenter_email %>
-    <%= f.text_field :commenter_email, :placeholder => "email" %>
+    <div class="control-group">
+      <%= f.label :commenter, :class => "control-label" %>
+      <div class="groups">
+        <%= f.text_field :commenter %>
+      </div>
+    </div>
 
-    <%= f.label :commenter_url %>
-    <%= f.text_field :commenter_url %>
+    <div class="control-group">
+      <%= f.label :commenter_email, :class=>"control-label" %>
+      <div class="groups">
+        <%= f.text_field :commenter_email, :placeholder => "example@xxx.com" %>
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <%= f.label :commenter_url, :class=>"control-label" %>
+      <div class="groups">
+        <%= f.text_field :commenter_url, :placeholder => "http://www.aa.com" %>
+      </div>
+    </div>
 
-    <%= f.label :content %>
-    <%= f.text_area :content, :rows => 6, :cols => 20 %>
+    <div calss="control-group">
+      <%= f.label :content, :class=>"control-label" %>
+      <div class="groups">
+        <%= f.text_area :content, :rows => 6, :cols => 20 %>
+      </div>
+    </div>
 
-    <%= f.submit "Submit" %>
+    <div class="control-group">
+      <div class="groups">
+        <%= f.submit "Submit" %>
+      </div>
+    </div>
   <% end %>
 </div>
 

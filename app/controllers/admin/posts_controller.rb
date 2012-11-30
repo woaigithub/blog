@@ -14,6 +14,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def create
     @category = Category.find(params[:post][:category_id])
+ 
     params[:post].delete(:category_id)
     @post = @category.posts.build(params[:post])
     @post.user = current_user
@@ -33,6 +34,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def update
     @category = Category.find(params[:post][:category_id])
+
     params[:post].delete(:category_id)
     @post = Post.find(params[:id])
     @post.category = @category
