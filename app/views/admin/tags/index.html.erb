@@ -1,0 +1,11 @@
+<h1>Tags</h1>
+
+<% if @tags.any? %>
+  <% @tags.each do |tag| %>
+    <div class="row">
+      <div class="span3">
+       <%= link_to tag.title, edit_admin_tag_path(tag.id) %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

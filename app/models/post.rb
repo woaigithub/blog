@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :comments
+  has_and_belongs_to_many :tags
 
 #  def to_param
 #    "#{id} #{slug}".parameterize
