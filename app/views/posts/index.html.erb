@@ -4,15 +4,25 @@
 
 
 <% @posts.each do |post| %>
-  <div>
-    <div class="row">
-    
-      <%= link_to post.title, post%>
-
-    </div>
-    <div claass="row">
-      <%= post.summary %>
+  <div class="row ml-20">
+  	<div class="span8">
+	    <div class="row">
+	      <div class="span2">
+	      <%= link_to post.title, post%>
+          </div>
+          <div class="span2">
+	      Author <%= post.user.nickname %>
+          </div>
+          <div class="span3">
+	      Posted at <%= time_ago_in_words(post.created_at.localtime) %> ago
+          </div>
+	    </div>
+	    <div claass="row">
+	      <%= post.summary %>
+	    </div>
     </div>
   </div>
+
+  <hr/>
 
 <% end %>

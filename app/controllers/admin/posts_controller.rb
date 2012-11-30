@@ -16,6 +16,7 @@ class Admin::PostsController < Admin::ApplicationController
     @category = Category.find(params[:post][:category_id])
     params[:post].delete(:category_id)
     @post = @category.posts.build(params[:post])
+    @post.user = current_user
     if @post.save
       flash[:notice] = "post was created successfully"
       redirect_to admin_posts_path
@@ -35,6 +36,7 @@ class Admin::PostsController < Admin::ApplicationController
     params[:post].delete(:category_id)
     @post = Post.find(params[:id])
     @post.category = @category
+    @post.user = current_user
     if @post.update_attributes(params[:post])
       flash[:notice] = "post was updated successfully"
       redirect_to admin_posts_path

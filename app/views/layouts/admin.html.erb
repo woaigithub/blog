@@ -18,14 +18,14 @@
     <%= render 'layouts/header' %>
   </header>
 
-  <div class="container blog-body" style="height:800px;">
+  <div class="container blog-body" style="min-height:800px;">
     <div class="row">
-      <div class="span8">
+      <div class="span9">
         <%= flash[:notice] %>
       </div>
     </div>
     <div class="row">
-      <div class="span8">
+      <div class="span9">
         <%= yield %>
       </div>
       <div class="span3">

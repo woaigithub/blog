@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => true
   validates :password_confirmation, :presence => true
  
-  validates :email, :presence => true, :uniqueness => true
-  validates :nickname, :presence => true
+  validates :email, :presence => true, :uniqueness => true, :format => { :with => /^\w+@\w+\.\w+$/ },
+                    :length => { :maximum => 40 }
+  validates :nickname, :presence => true, :length => { :in =>1..30 }
 
   has_many :posts
  

@@ -45,6 +45,14 @@
     </div>
 
     <div class="control-group">
+      <%= f.label :summary, :class => "control-lable" %>
+      <div class="groups">
+
+        <%= f.text_area :summary, :rows => 10, :cols => 20 %>
+      </div>
+    </div>
+
+    <div class="control-group">
       <div class="groups">
         <%= f.submit %>  
       </div>

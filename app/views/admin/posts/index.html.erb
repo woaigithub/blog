@@ -2,12 +2,24 @@
 
 <h1>Posts</h1>
 
-  <% @posts.each do |post| %>
-  <div class="row">
-    <div class="span3"><%= link_to post.title, [:admin, post]%></div>
-    <div class="span1">
-      <%= link_to "edit", edit_admin_post_path(post.id) %>
-    </div>
+<div class="row">
+  <div class="span2">Title</div>
+  <div class="span2">Category</div>
+  <div class="span1">Created</div>
+  <div class="span2">Updated</div>
+  <div class="span1">Author</div>
+  <div class="span1"></div>
+</div>
+<% @posts.each do |post| %>
+<div class="row">
+  <div class="span2"><%= link_to post.title, [:admin, post]%></div>
+  <div class="span2"><%= post.category.title %></div>
+  <div class="span1"><%= post.created_at.localtime.to_s(:db) %></div>
+  <div class="span2"><%= post.updated_at.localtime.to_s(:db) %></div>
+  <div class="span1"><%= post.user.nickname %></div>
+  <div class="span1">
+    <%= link_to "edit", edit_admin_post_path(post.id) %>
   </div>
-  <% end %>
+  </div>
+<% end %>
 
