@@ -3,32 +3,32 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
  
-  test "user have valid nickname" do
+  test "should be valid user" do
      user = User.new(:nickname => "nickname", :email => "jor@123.com", :password => "123", :password_confirmation => "123")
      assert user.valid?, "user should have valid nickname"
   end 
   
-  def test_user_nickname_length_equal_min_1
+  def test_should_be_valid_nickname_length_equal_min_1
     user = User.new(:nickname => "n", :email => "jor@123.com", :password => "123", :password_confirmation => "123")
     assert user.valid?, "use should have valid nickname"
   end
     
-  def test_user_nickname_length_equal_max_30
+  def test_should_be_valid_user_nickname_length_equal_max_30
     user = User.new(:nickname => "m"*30, :email => "jor@123.com", :password => "123", :password_confirmation => "123")
     assert user.valid?, "use should have valid nickname"
   end
 
-  def  test_user_without_nickname 
+  def  test_should_be_invalid_user_without_nickname 
      user = User.new(:email => "jor@123.com", :password => "123", :password_confirmation => "123")
      assert user.invalid?
   end  
 
-  def  test_user_nickname_length_equal_31 
+  def  test_should_be_invalid_user_nickname_length_equal_31 
     user = User.new(:nickname => "d"*31, :email => "jor@123.com", :password => "123", :password_confirmation => "123")
     assert user.invalid?
   end
 
-  def  test_user_nickname_length_more_than_31
+  def  test_should_be_invalid_user_nickname_length_more_than_31
     user = User.new(:nickname => "nickname"*5, :email => "jor@123.com", :password => "123", :password_confirmation => "123")
     assert user.invalid?
   end
@@ -53,12 +53,12 @@ class UserTest < ActiveSupport::TestCase
     assert user2.invalid?
   end
 
-  def test_valid_user_from_factory_girl
+  def test_should_be_valid_user_from_factory_girl
     user = build(:user1)
     assert user.valid?
   end
 
-  def test_invalid_user_from_factory_girl
+  def test_should_be_invalid_user_from_factory_girl
     user = build(:user2)
     assert user.invalid?
   end

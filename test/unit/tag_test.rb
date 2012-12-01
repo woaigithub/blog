@@ -14,7 +14,7 @@ class TagTest < ActiveSupport::TestCase
     assert tag.invalid?
   end
 
-  def test_should_be_invalid_tag_length_equal_21
+  def test_should_be_invalid_tag_length_equal_21_more_than_max
     tag = FactoryGirl.build(:tag_invalid_title_length_equal_21)
     assert tag.invalid?
   end
