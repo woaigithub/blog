@@ -43,4 +43,4 @@ gem 'mysql2'
 
 gem 'will_paginate', '~> 3.0'
 
-
+gem 'factory_girl_rails'

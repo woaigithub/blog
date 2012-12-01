@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  include FactoryGirl::Syntax::Methods
  
   test "user have valid nickname" do
      user = User.new(:nickname => "nickname", :email => "jor@123.com", :password => "123", :password_confirmation => "123")
@@ -52,6 +53,9 @@ class UserTest < ActiveSupport::TestCase
     assert user2.invalid?
   end
 
-  
+  def test_generate_user_from_factory_girl
+    user = build(:User)
+    assert user.valid?
+  end
 
 end
