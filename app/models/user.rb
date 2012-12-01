@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
       if user && user.generate_digest(user.password_salt, params[:password]) == user.password_digest
         user
       else
-        false
+        nil
       end
     end
   end
