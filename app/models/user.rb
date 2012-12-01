@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   class << self
     def authenticate(params)
       user = User.find_by_email(params[:email])
-      if user && user.generate_digest(user.salt, params[:password]) == user.password_digest
+      if user && user.generate_digest(user.password_salt, params[:password]) == user.password_digest
         user
       else
         false
@@ -34,8 +34,8 @@ class User < ActiveRecord::Base
   private
 
   def encrypt_password
-    self.salt = generate_salt
-    self.password_digest = generate_digest(self.salt,self.password)
+    self.password_salt = generate_salt
+    self.password_digest = generate_digest(self.password_salt,self.password)
   end
   
   def generate_salt
