@@ -7,7 +7,7 @@
 * nickname
 * email
 * password_digest
-* salt
+* password_salt
 * created_at
 * updated_at
 
