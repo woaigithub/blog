@@ -53,12 +53,12 @@ class UserTest < ActiveSupport::TestCase
     assert user2.invalid?
   end
 
-  def test_use_valid_user_from_factory_girl
+  def test_valid_user_from_factory_girl
     user = build(:user1)
     assert user.valid?
   end
 
-  def test_use_invalid_user_from_factory_girl
+  def test_invalid_user_from_factory_girl
     user = build(:user2)
     assert user.invalid?
   end
