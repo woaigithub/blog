@@ -59,5 +59,4 @@ class PostTest < ActiveSupport::TestCase
   end
 
 
-
 end

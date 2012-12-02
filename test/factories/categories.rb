@@ -1,7 +1,5 @@
 FactoryGirl.define  do
-  factory :category do
-  	title "category"
-  end
+
 
   factory :category_valid, :class=>:Category do
   	title "categorytitle"
@@ -12,5 +10,10 @@ FactoryGirl.define  do
 
   factory :category_invalid_title_length_equal_21, :class=> :Category do
     title "a"*21
+  end
+
+  factory :category do
+    title "title_category"
+
   end
 end

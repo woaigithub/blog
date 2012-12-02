@@ -80,4 +80,6 @@ FactoryGirl.define do
     association :category, :factory => :category_valid
   end
 
+  
+
 end
