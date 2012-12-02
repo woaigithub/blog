@@ -64,4 +64,30 @@ class UserTest < ActiveSupport::TestCase
   end
 
  
+  def test_email_should_be_valid_created_from_sequence
+    user = FactoryGirl.build(:user_valid)
+    assert user.valid?
+  end
+
+
+  def test_email_should_be_valid_created_from_sequence
+    email = FactoryGirl.generate(:email)
+    assert !email.blank?
+  end
+
+  def test_user_create_should_be_valid_created_from_sequence
+    email = FactoryGirl.generate(:email)
+    user = FactoryGirl.create(:user_invalid_without_email, :email=>email)
+   
+    assert user.valid?
+  end
+
+  def test_user_build_should_be_valid_created_from_sequence
+    email = FactoryGirl.generate(:email)
+    user = FactoryGirl.build(:user_invalid_without_email, :email=>email)
+   
+    assert user.valid?
+  end
+
+  
 end

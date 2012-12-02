@@ -11,4 +11,22 @@ FactoryGirl.define do
     password "1232"
     password_confirmation "123"
   end
+
+  sequence :email do |n|
+    "email#{n}@factory.com"
+  end
+
+
+  factory :user_invalid_without_email, :class => :User do
+    nickname "nickname2"
+    password "1232"
+    password_confirmation "1232"
+  end
+
+  factory :user_valid, :class=>:User  do
+    email
+    nickname "nickname"
+    password "123456"
+    password_confirmation "123456"
+  end
 end
