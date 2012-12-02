@@ -1,4 +1,8 @@
 FactoryGirl.define  do
+  factory :category do
+  	title "category"
+  end
+
   factory :category_valid, :class=>:Category do
   	title "categorytitle"
   end

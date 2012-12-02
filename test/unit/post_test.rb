@@ -8,6 +8,16 @@ class PostTest < ActiveSupport::TestCase
     assert post.valid?
   end
 
+  def test_should_be_valid_with_category1
+    post = FactoryGirl.build(:post_valid_with_category1)
+    assert post.category.valid?
+  end
+
+  def test_should_be_valid_with_category2
+    post = FactoryGirl.build(:post_valid_with_category2)
+    assert post.category.valid?
+  end
+
   def test_should_be_invalid_post_invalid_without_title
     post=build(:post_invalid_without_title)
     assert post.invalid?

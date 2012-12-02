@@ -64,6 +64,20 @@ FactoryGirl.define do
     content "content"*10000
   end
 
+  factory :post_valid_with_category1, :class => :Post do
+    title "post"
+    slug "slug"
+    summary "summary"
+    content "content"
+    category
+  end
 
+  factory :post_valid_with_category2, :class => :Post do
+    title "post"
+    slug "slug"
+    summary "summary"
+    content "content"
+    association :category, :factory => :category_valid
+  end
 
 end
