@@ -18,15 +18,18 @@ class SessionsControllerTest < ActionController::TestCase
   
   def test_should_route_from_signout_to_destroy
     
-     assert_routing( {:path =>"/signout", :method => :delete} , 
-     	            {:controller =>"sessions", :action =>"destroy", :method => :delete})
+
+      assert_routing(
+     	            {:path =>"signout", :method => :delete} ,
+     	            {:controller =>"sessions", :action =>"destroy", :method => :delete}
+     	            )
   
   end
   
   def test_should_be_render_new_template_after_email_do_not_match_password
     post :create,{:user=>{:email=>"",:password=>""}}
     assert_template :new
-    assert_equal(flash[:notice] , "email and password do not match")
+    assert_equal("email and password do not match" , flash[:notice] )
   end
 
   def test_should_be_200_after_signin_success
@@ -34,7 +37,7 @@ class SessionsControllerTest < ActionController::TestCase
  
   	post :create ,{:user=> {:email=>user.email,:password=>user.password}}
   
-  	assert_equal(flash[:notice] , "sign in successfully")
+  	assert_equal("sign in successfully" , flash[:notice]  )
   	assert_not_nil @controller.current_user
   	assert @controller.signed_in?
 
