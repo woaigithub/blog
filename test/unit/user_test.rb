@@ -89,5 +89,10 @@ class UserTest < ActiveSupport::TestCase
     assert user.valid?
   end
 
+  def test_should_be_valid
+    user =FactoryGirl.create(:user_valid)
+   
+    assert User.authenticate(:email=>user.email,:password=>user.password)
+  end
   
 end

@@ -26,5 +26,18 @@ class SessionsControllerTest < ActionController::TestCase
   def test_should_be_render_new_template_after_email_do_not_match_password
     post :create,{:user=>{:email=>"",:password=>""}}
     assert_template :new
+    assert_equal(flash[:notice] , "email and password do not match")
   end
+
+  def test_should_be_200_after_signin_success
+  	user = FactoryGirl.create(:user_valid)
+ 
+  	post :create ,{:user=> {:email=>user.email,:password=>user.password}}
+  
+  	assert_equal(flash[:notice] , "sign in successfully")
+  	assert_not_nil @controller.current_user
+  	assert @controller.signed_in?
+
+  end
+
 end

@@ -24,6 +24,7 @@ FactoryGirl.define do
   end
 
   factory :user_valid, :class=>:User  do
+  
     email
     nickname "nickname"
     password "123456"
