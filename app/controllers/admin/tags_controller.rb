@@ -11,7 +11,7 @@ class Admin::TagsController < Admin::ApplicationController
   def create
     @tag = Tag.new(params[:tag])
 
-    if @tag.save
+    if @tag.save!
       flash[:notice] = "tag was created successfully"
       redirect_to admin_tags_path
     else
