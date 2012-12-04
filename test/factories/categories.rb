@@ -1,5 +1,8 @@
 FactoryGirl.define  do
 
+  sequence :category_title do |n|
+    "category-#{n}"
+  end
 
   factory :category_valid, :class=>:Category do
   	title "categorytitle"

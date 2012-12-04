@@ -27,14 +27,5 @@ class Admin::PostsControllerTest < ActionController::TestCase
   end
 
 
-  # def test_should_be_200_after_update_post
-  #   post = FactoryGirl.create(:post_valid)
-
-  #   category = FactoryGirl.create(:category_valid)
-
-  #   assert_not_nil Post.find(post.id )
-
-
-  # end
 
 end

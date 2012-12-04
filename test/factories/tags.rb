@@ -1,4 +1,9 @@
 FactoryGirl.define do
+
+  sequence :tag_title do |n|
+    "#{n}-tagtitle"
+  end
+
   factory :tag_valid, :class=>:Tag do
     title "tagtitle"
   end
