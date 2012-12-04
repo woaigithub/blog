@@ -1,13 +1,2 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  commenter: MyString
-  commenter_email: MyString
-  commenter_url: MyString
-  content: MyText
-
-two:
-  commenter: MyString
-  commenter_email: MyString
-  commenter_url: MyString
-  content: MyText

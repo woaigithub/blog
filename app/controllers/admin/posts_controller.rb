@@ -20,7 +20,7 @@ class Admin::PostsController < Admin::ApplicationController
     @post = @category.posts.build(params[:post])
     @post.user = current_user
     @post.tag_ids = params[:tag_ids]
-    if @post.save
+    if @post.save!
       flash[:notice] = "post was created successfully"
       redirect_to admin_posts_path
     else

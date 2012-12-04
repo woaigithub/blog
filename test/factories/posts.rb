@@ -1,14 +1,18 @@
 FactoryGirl.define do
+
+  sequence :slug do |n|
+    "slug-#{n}-slug"
+  end
   factory :post_valid, :class=>:Post do
     title "post title"
-    slug "post-title"
+    sequence(:slug){ |n| "slug#{n}" }   #"post-title"
     summary "summary"
     content "content"
   end
 
   factory :post_invalid_without_title, :class=>:Post do
 
-    slug "post-title"
+    slug
     summary "summary"
     content "content"
   end
