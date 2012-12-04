@@ -4,7 +4,10 @@
   Category: <%= link_to @post.category.title, @post.category %>
 </div>
 <div>
-  <%= @post.user.nickname %> created at <%= @post.created_at.localtime.to_s(:db) %>
+  <%= image_tag @post.user.gravatar_url(:size=>40) %>
+  <%= @post.user.nickname %> 
+  
+  created at <%= @post.created_at.localtime.to_s(:db) %>
 </div>
 <div claass="row">
   Tags: <%= @post.tags.map {|tag| tag.title}.join(", ") %>

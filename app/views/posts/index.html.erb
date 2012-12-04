@@ -8,14 +8,18 @@
   	<div class="span8">
 	    <div class="row">
 	      <div class="span2">
-	      <%= link_to post.title, post%>
-          </div>
-          <div class="span2">
-	      Author <%= post.user.nickname %>
-          </div>
-          <div class="span3">
-	      Posted at <%= time_ago_in_words(post.created_at.localtime) %> ago
-          </div>
+	        <%= link_to post.title, post%>
+        </div>
+        <div class="span1">
+          <%= image_tag post.user.gravatar_url(:size=>40) %>
+        </div>
+        <div class="span2">
+	        Author <%= post.user.nickname %>
+          
+        </div>
+        <div class="span3">
+	        Posted at <%= time_ago_in_words(post.created_at.localtime) %> ago
+        </div>
 	    </div>
 
       <div claass="row">

@@ -1,4 +1,8 @@
 class Comment < ActiveRecord::Base
+  include Gravtastic
+  gravtastic :commenter_email
+
+
   attr_accessible :commenter, :commenter_email, :commenter_url, :content
 
   validates :commenter, :presence => true, :length => { :maximum => 25 }

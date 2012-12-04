@@ -2,6 +2,9 @@ require 'digest'
 require 'securerandom'
 
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
+
   attr_accessible :email, :nickname, :password, :password_confirmation
   attr_accessor :password, :password_confirmation
    

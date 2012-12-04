@@ -2,6 +2,7 @@
 
   <% @post.comments.each do |comment| %>
     <div>
+      <%= image_tag comment.gravatar_url(:size=>30) %>
 	  <a href="<%= comment.commenter_url %>"><%= comment.commenter%></a> 
 	  comment at <%= comment.created_at.localtime.to_s(:db) %>
 	  <br/>
