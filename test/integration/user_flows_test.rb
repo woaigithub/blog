@@ -15,7 +15,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
 
     user_session.browse_site
     guest_session.browse_site
-  
+ 
   end
 
   def test_should_signin_first_before_add_post
