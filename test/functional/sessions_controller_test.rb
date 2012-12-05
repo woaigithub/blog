@@ -20,7 +20,7 @@ class SessionsControllerTest < ActionController::TestCase
     
 
       assert_routing(
-     	            {:path =>"signout", :method => :delete} ,
+     	            "signout",
      	            {:controller =>"sessions", :action =>"destroy", :method => :delete}
      	            )
   

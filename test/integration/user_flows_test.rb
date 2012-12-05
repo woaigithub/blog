@@ -19,8 +19,11 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
   end
 
   def test_should_signin_first_before_add_post
+    
     get "/admin/posts/new"
+
     follow_redirect!
+
   end
 
   private
