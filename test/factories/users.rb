@@ -30,4 +30,11 @@ FactoryGirl.define do
     password "123456"
     password_confirmation "123456"
   end
+
+  factory :user_valid_too, :class => :User do
+    email
+    nickname "admin"
+    password "123456"
+    password_confirmation "123456"
+  end
 end
