@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
+      UserMailer.registration_confirmation(@user).deliver
+
       flash[:notice] = "sign up successfully!"
       signin(@user)
       redirect_to root_path
