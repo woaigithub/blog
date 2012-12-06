@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201094445) do
+ActiveRecord::Schema.define(:version => 20121206085347) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20121201094445) do
     t.string   "nickname"
     t.string   "password_digest"
     t.string   "password_salt"
+    t.string   "auth_token"
   end
 
 end
