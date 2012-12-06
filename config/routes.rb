@@ -13,7 +13,7 @@ Blog::Application.routes.draw do
   resources :categories
   resources :sessions
   resources :users
-  
+  resources :password_resets 
 
   namespace :admin do
     resources :posts
