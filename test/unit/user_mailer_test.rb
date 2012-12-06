@@ -3,18 +3,16 @@ require 'test_helper'
 
 class UserMailerTest < ActionMailer::TestCase
 
+  include FactoryGirl::Syntax::Methods
 
-  tests UserMailer
+  def test_registration_confirmation
 
-  test "invite" do
-  	from = "woaiguanshui2012@163.com"
-  	to = "woaiguanshui2013@163.com"
-  	@expected.from = from
-  	@expected.to = to
-  	@expected.subject = "you have invited by #{@expected.from}"
-  	@expected.body = read_fixture('invite')
-  	@expected.date = Time.now
+    user = FactoryGirl.create(:user_valid)
+    mail = UserMailer.registration_confirmation(user).deliver
 
-  	assert_equal @expected.encoded, UserMailer.create_invite(from, to, @expected.date).encoded
+    assert !ActionMailer::Base.deliveries.empty?
+
+  	assert_equal [user.email], mail.to
+  	
   end
 end
