@@ -17,14 +17,21 @@ class User < ActiveRecord::Base
 
   has_many :posts
  
-  before_save :encrypt_password 
+  before_save :encrypt_password, :if => :new_record?
 
   before_create { generate_token(:auth_token) }
+
+  def reset_password(unencrypt_password)
+    self.password = unencrypt_password
+    encrypt_password
+    save(:validate => false)
+  end
 
   def send_password_reset
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
-    save!
+    #update_attribute(:password_reset_token, self[:password_reset_token])
+    save(:validate => false)
     UserMailer.password_reset(self).deliver
   end
 

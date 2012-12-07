@@ -20,9 +20,10 @@
     </p>
 
     <div class="control-group">
-      <%= label_tag :remember_me %>
+      
       <div class="groups">
         <%= check_box_tag :remember_me %>
+        <%= label_tag :remember_me, "Remember me for 20 years" %>
       </div>
     </div>
 
@@ -34,3 +35,8 @@
     </div>
 
   <% end %>
+
+
+  <div>
+    <%= link_to "I have not an account, sign up!", signup_path %>
+  </div>
