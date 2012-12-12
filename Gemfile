@@ -47,3 +47,5 @@ gem 'will_paginate', '~> 3.0'
 gem 'factory_girl_rails'
 
 gem 'gravtastic'
+gem 'redcarpet'
+gem 'coderay'

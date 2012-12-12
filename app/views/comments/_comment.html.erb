@@ -9,7 +9,7 @@
 	  about <%= time_ago_in_words(comment.created_at.localtime) %> ago
 	  <br/>
 	  <div>
-	    <%= comment.content %>
+	    <%= raw markdown comment.content %>
 	  </div>
 	  <hr/>
 	</div>

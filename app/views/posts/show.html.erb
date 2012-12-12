@@ -13,7 +13,7 @@
   Tags: <%= @post.tags.map {|tag| tag.title}.join(", ") %>
 </div>
 <div>
-  <%= raw @post.content%>
+  <%= raw markdown @post.content %>
 </div>
 
 

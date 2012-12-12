@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.new(params[:comment])
     @comment.post = @post
-    if @comment.save!
+    if @comment.save
       redirect_to @post
     else
       render "posts/show"

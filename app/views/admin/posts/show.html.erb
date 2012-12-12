@@ -1,10 +1,13 @@
 <h1><%= @post.title %></h1>
 
 <div>
-  <%= @post.category.title %>
+  Category: <%= @post.category.title %>
 </div>
 <div>
-  <%= @post.content%>
+  Tags: <%= @post.tags.join(',') %>
+</div>
+<div>
+  <%= raw markdown @post.content%>
 </div>
 
 
