@@ -1,9 +1,15 @@
 <div class="container" style="background:grey;min-height:100px">
     <div class="row">
 
-
+      
       <div class="span3">copytright@<a href="#">woaigithub</a></div>
       <div class="span1"><%= link_to "admin", admin_posts_path %></div>
     </div>
+  <div class="row">
+    <%= request.env["HTTP_USER_AGENT"]%>
+  </div>  
+  <div class="row">
+    <%= request.user_agent %>
   </div>
+</div>
 
